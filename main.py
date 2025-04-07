@@ -5,7 +5,7 @@ from tempfile import NamedTemporaryFile
 
 # Function to predict the class of uploaded images using a pre-trained TensorFlow model
 def model_prediction(test_images):
-    model = tf.keras.models.load_model('trained_model.h5')
+    model = tf.keras.models.load_model('trained_model.keras')
     predictions = []
     for test_image in test_images:
         image = tf.keras.preprocessing.image.load_img(test_image, target_size=(128, 128))
@@ -23,7 +23,7 @@ Home, App, About = st.tabs(["🏠Home", "⚙️App", "ℹ️About"])
 with Home:
     st.header("Welcome to the Plant Disease Detection App")
     st.write("This application leverages a TensorFlow model to identify plant diseases from images.")
-    st.image("OIP.jpeg", use_column_width=True)
+    st.image("hero.png", use_container_width=True)
     st.markdown("""
     ### How It Works
     1. **Upload Images**: Navigate to the **Disease Detection** tab and upload images of plants.
@@ -50,7 +50,7 @@ with App:
     if uploaded_files:
         if st.toggle("Display Images"):
             for uploaded_file in uploaded_files:
-                st.image(uploaded_file, caption=f'Uploaded Image: {uploaded_file.name}', use_column_width=True)
+                st.image(uploaded_file, caption=f'Uploaded Image: {uploaded_file.name}', use_container_width=True)
         if st.button("Analyze"):
             with st.spinner("Analyzing..."):
                 temp_files = []
