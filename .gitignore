@@ -4,3 +4,7 @@ test/
 valid/
 train/
 Classification/
+.streamlit/secrets.toml
+secrets.toml
+.env
+__pycache__/
