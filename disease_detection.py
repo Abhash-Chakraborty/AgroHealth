@@ -26,7 +26,7 @@ def model_prediction(test_images):
         input_arr1 = tf.keras.preprocessing.image.img_to_array(image1)
         input_arr1 = np.array([input_arr1])
         
-        image2 = tf.keras.preprocessing.image.load_img(test_image, target_size=(224, 224))
+        image2 = tf.keras.preprocessing.image.load_img(test_image, target_size=(128, 128))
         input_arr2 = tf.keras.preprocessing.image.img_to_array(image2)
         input_arr2 = np.array([input_arr2])
         
