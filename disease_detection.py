@@ -10,7 +10,7 @@ import google.generativeai as genai
 def load_models():
     model1 = tf.keras.models.load_model('trained_model1.keras')
     model2 = tf.keras.models.load_model('trained_model2.keras')
-    model3 = tf.keras.models.load_model('trained_model3.h5')
+    model3 = tf.keras.models.load_model('trained_model3.keras')
     return model1, model2, model3
 
 # Function to predict using ensemble of models with hard voting
