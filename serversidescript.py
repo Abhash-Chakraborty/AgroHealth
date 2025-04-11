@@ -8,18 +8,21 @@ from tensorflow.keras.models import load_model
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 from google.oauth2.service_account import Credentials
+import streamlit as st
 
 # Define constants
 SCOPES = ['https://www.googleapis.com/auth/drive.readonly']
-SERVICE_ACCOUNT_FILE = 'agrohealth-456405-4f4333b07084.json' 
-FOLDER_ID = '1JYKlQtLOGUGm9PReSfJCtoqTf4VsoSkE'  
+FOLDER_ID = st.secrets["FOLDER_ID"] 
 TEMP_PATH = './temp/'  
 STORAGE_PATH = './storage/'  
 MODEL_PATH = 'leaf_classifier_model.h5'  
 
 def authenticate_google_drive():
-    """Authenticate using a service account."""
-    credentials = Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    """Authenticate using a service account from Streamlit secrets."""
+    credentials = Credentials.from_service_account_info(
+        st.secrets["gcp_service_account"],
+        scopes=SCOPES
+    )
     return build('drive', 'v3', credentials=credentials)
 
 def list_files_in_folder(drive_service, folder_id):
