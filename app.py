@@ -24,7 +24,7 @@ def main():
     download_page = st.Page("download.py", title="Download", icon="⬇️")
     
     # Set up navigation
-    page = st.navigation([home_page, app_page, about_page, download_page])
+    page = st.navigation({"Navigation" :[home_page, app_page, about_page, download_page]}, position="sidebar", expanded=False)
     
     # Run the selected page
     page.run()
