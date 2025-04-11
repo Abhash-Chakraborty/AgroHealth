@@ -16,7 +16,6 @@ opencv-python==4.5.5.64
 pandas==1.5.2
 pillow==10.2.0
 plotly==5.19.0
-protobuf==5.29.4
 scikit-learn==1.5.2
 seaborn==0.13.2
 tensorboard==2.13.0
@@ -24,3 +23,4 @@ tensorboard-data-server==0.7.2
 tensorflow==2.13.1
 tensorflow-estimator==2.13.0
 tensorflow-io-gcs-filesystem==0.31.0
+protobuf
